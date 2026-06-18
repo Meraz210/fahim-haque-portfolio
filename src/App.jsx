@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import profilePhoto from '../assets/profile.jpg';
 import {
   ArrowUpRight,
   Award,
@@ -441,7 +442,7 @@ function Hero() {
           <div className="relative z-20">
             <div className="rounded-full bg-[conic-gradient(from_180deg,#22d3ee,#7c3aed,#ec4899,#22d3ee)] p-2 shadow-[0_0_90px_rgba(124,58,237,0.32)]">
               <img
-                src="/assets/profile.jpg"
+                src={profilePhoto}
                 alt="Fahim Haque"
                 className="relative z-10 h-32 w-32 rounded-full border border-white/15 bg-slate-950 object-cover sm:h-44 sm:w-44 md:h-48 md:w-48"
               />
