@@ -3,8 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal portfolio of Fahim Haque - Machine Learning Engineer, Deep Learning Researcher, and Data Analyst. Explore education, publications, and skills.">
-  <title>Fahim Haque | Portfolio</title>
+  <meta name="description" content="Fahim Haque is a machine learning and data analytics professional with experience in deep learning research, predictive modeling, Power BI dashboards, SQL, and Python training.">
+  <meta name="author" content="Fahim Haque">
+  <meta name="theme-color" content="#0b0d10">
+  <meta property="og:title" content="Fahim Haque | Machine Learning & Data Analytics Portfolio">
+  <meta property="og:description" content="Explore Fahim Haque's education, ML research, analytics projects, technical skills, publications, and professional experience.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./assets/profile.jpg">
+  <meta name="twitter:card" content="summary">
+  <title>Fahim Haque | Machine Learning & Data Analytics Portfolio</title>
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,8 +21,40 @@
   <!-- CSS Stylesheet -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="professional.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Fahim Haque",
+    "jobTitle": "Machine Learning and Data Analytics Professional",
+    "email": "mailto:fahim.haque36@gmail.com",
+    "telephone": "+8801771641505",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Saidpur",
+      "addressCountry": "Bangladesh"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Daffodil International University"
+    },
+    "knowsAbout": [
+      "Machine Learning",
+      "Deep Learning",
+      "Data Analytics",
+      "Python",
+      "SQL",
+      "Power BI"
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/fahimhqmim"
+    ]
+  }
+  </script>
 </head>
 <body class="antialiased font-sans overflow-x-hidden">
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
   <!-- Background Decorative Orbs & Patterns -->
   <div class="background-decorations">
@@ -84,10 +123,6 @@
       </nav>
 
       <div class="nav-controls">
-        <button id="print-resume-btn" class="print-btn" aria-label="Print CV">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          <span class="print-text">Resume</span>
-        </button>
         <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
           <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
           <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
@@ -101,7 +136,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- Hero / About Section -->
     <section class="hero-section" id="hero">
       <div class="container mx-auto px-4 md:px-6 max-w-7xl relative z-10">
@@ -142,10 +177,6 @@
                 Explore Projects
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
-              <button id="hero-download-cv" class="btn btn-outline">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Print Resume
-              </button>
             </div>
 
             <div class="hero-proof-grid" aria-label="Profile highlights">
@@ -266,17 +297,35 @@
           <!-- B.Sc. Card -->
           <div class="education-card glass-card">
             <div class="edu-header">
-              <div>
+              <div class="edu-title-block">
+                <span class="edu-kicker">Bachelor's Degree</span>
                 <h3 class="edu-degree">B.Sc. in Computer Science and Engineering</h3>
                 <h4 class="edu-school">Daffodil International University | Dhaka, Bangladesh</h4>
               </div>
               <span class="edu-date">01/2020 – 02/2024</span>
             </div>
             <div class="edu-body">
-              <p><strong>Final Grade:</strong> 3.86/4.00 (German Grade Equivalent: 1.2 according to Uni-Assist)</p>
-              <p><strong>Thesis Title:</strong> Mango Leaf Disease Detection Using Deep Learning</p>
+              <div class="edu-highlight-grid" aria-label="Education highlights">
+                <div class="edu-highlight">
+                  <span>Final Grade</span>
+                  <strong>3.86 / 4.00</strong>
+                </div>
+                <div class="edu-highlight">
+                  <span>German Equivalent</span>
+                  <strong>1.2</strong>
+                </div>
+                <div class="edu-highlight">
+                  <span>Focus Area</span>
+                  <strong>AI & Data Systems</strong>
+                </div>
+              </div>
+
+              <div class="edu-thesis">
+                <span class="coursework-label">Thesis</span>
+                <p>Mango Leaf Disease Detection Using Deep Learning</p>
+              </div>
               <div class="coursework-container">
-                <span class="coursework-label">Relevant Coursework:</span>
+                <span class="coursework-label">Relevant Coursework</span>
                 <div class="coursework-tags">
                   <span>Statistics</span><span>Engineering Mathematics</span><span>Discrete Mathematics</span><span>Numerical Methods</span><span>Database Management Systems</span><span>Data Structures</span><span>Algorithms</span><span>Artificial Intelligence</span><span>Data Mining</span><span>Machine Learning</span><span>Big Data</span>
                 </div>
@@ -695,6 +744,12 @@
                 <li>Structured a relational data model and designed performance reporting dashboards across regions and product categories.</li>
                 <li>Improved reporting efficiency by automating KPI calculations and reducing manual processing steps.</li>
               </ul>
+              <div class="project-actions">
+                <a href="mailto:fahim.haque36@gmail.com?subject=Enterprise%20Sales%20Analytics%20Dashboard%20case%20study" class="project-action-link">
+                  Request Case Study
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -756,6 +811,12 @@
                 <li>Utilized post-training floating-point quantization to reduce parameter size by 65% for mobile inference.</li>
                 <li>Deployed a lightweight interface using Python backend to allow real-time diagnostic reports.</li>
               </ul>
+              <div class="project-actions">
+                <a href="mailto:fahim.haque36@gmail.com?subject=Mango%20Leaf%20Disease%20Diagnostic%20System%20case%20study" class="project-action-link">
+                  Request Case Study
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -899,6 +960,7 @@
           <!-- Contact Form -->
           <div class="contact-form-wrapper glass-card">
             <form id="portfolio-contact-form" action="#" method="POST">
+              <p class="form-note">Send a message by email. The form opens your email app with the details filled in.</p>
               <div class="form-row">
                 <div class="form-group">
                   <input type="text" id="contact-name" name="name" required placeholder=" ">

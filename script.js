@@ -280,21 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ==========================================
-  // 10. Print CV / Resume Action
-  // ==========================================
-  const printHeaderBtn = document.getElementById('print-resume-btn');
-  const printHeroBtn = document.getElementById('hero-download-cv');
-
-  const printCV = () => {
-    window.print();
-  };
-
-  if (printHeaderBtn) printHeaderBtn.addEventListener('click', printCV);
-  if (printHeroBtn) printHeroBtn.addEventListener('click', printCV);
-
-
-  // ==========================================
-  // 11. Copy to Clipboard Utility
+  // 10. Copy to Clipboard Utility
   // ==========================================
   const copyButtons = document.querySelectorAll('.copy-btn');
 
@@ -330,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ==========================================
-  // 12. Contact Form Validation & Mock Submit
+  // 11. Contact Form Validation & Email Draft Submit
   // ==========================================
   const contactForm = document.getElementById('portfolio-contact-form');
   const formFeedback = document.getElementById('form-feedback-message');
@@ -360,24 +346,16 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      const submitBtn = contactForm.querySelector('.btn-submit');
-      const submitSpan = submitBtn.querySelector('span');
-      const originalText = submitSpan.textContent;
-      
-      submitSpan.textContent = 'Sending Message...';
-      submitBtn.style.opacity = '0.7';
-      submitBtn.disabled = true;
+      const subject = encodeURIComponent(subjectInput.value.trim());
+      const body = encodeURIComponent(
+        `Name: ${nameInput.value.trim()}\n` +
+        `Email: ${emailInput.value.trim()}\n\n` +
+        `${messageInput.value.trim()}`
+      );
 
-      setTimeout(() => {
-        submitSpan.textContent = originalText;
-        submitBtn.style.opacity = '1';
-        submitBtn.disabled = false;
-        
-        formFeedback.textContent = 'Thank you! Your message has been sent successfully.';
-        formFeedback.classList.add('success');
-        
-        contactForm.reset();
-      }, 1500);
+      window.location.href = `mailto:fahim.haque36@gmail.com?subject=${subject}&body=${body}`;
+      formFeedback.textContent = 'Your email app should open with the message ready to send.';
+      formFeedback.classList.add('success');
     });
   }
 
