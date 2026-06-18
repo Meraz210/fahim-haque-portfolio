@@ -9,6 +9,8 @@ import {
   BriefcaseBusiness,
   Code2,
   Database,
+  ExternalLink,
+  FileText,
   Github,
   GraduationCap,
   Linkedin,
@@ -21,6 +23,7 @@ import {
   ShieldCheck,
   Sun,
   Terminal,
+  Trophy,
 } from 'lucide-react';
 
 const profile = {
@@ -32,10 +35,10 @@ const profile = {
   phone: '(+880) 1771641505',
   location: 'Saidpur, Bangladesh',
   linkedin: 'https://www.linkedin.com/in/fahimhqmim',
-  github: 'https://github.com/Meraz210',
+  github: 'https://github.com/Fahim-Haque',
 };
 
-const navItems = ['About', 'Education', 'Skills', 'Experience', 'Projects', 'Certificates', 'Contact'];
+const navItems = ['About', 'Education', 'Skills', 'Experience', 'Projects', 'Research', 'Achievements', 'Certificates', 'Contact'];
 
 const snippets = [
   { className: 'left-[5%] top-[20%]', text: ['import numpy as np', 'import pandas as pd'] },
@@ -148,10 +151,51 @@ const projects = [
   },
 ];
 
+const researchPapers = [
+  {
+    title: 'Mango Leaf Disease Detection Using Deep Learning',
+    type: 'Undergraduate Thesis / Applied AI Research',
+    focus: 'CNN-based image classification workflow for agricultural disease diagnosis.',
+    highlights: ['Deep learning pipeline', 'Transfer learning experiment flow', 'Model-size optimization'],
+    link: profile.linkedin,
+    linkLabel: 'View research details',
+  },
+  {
+    title: 'Machine Learning & Data Analytics Research Portfolio',
+    type: 'Research Profile',
+    focus: 'Additional research work and publication details maintained on LinkedIn.',
+    highlights: ['Research writing', 'Data-driven experimentation', 'Applied analytics'],
+    link: profile.linkedin,
+    linkLabel: 'Verify on LinkedIn',
+  },
+];
+
+const achievements = [
+  ['Academic Excellence', 'Graduated with CGPA 3.86 / 4.00 in Computer Science and Engineering.'],
+  ['Training Impact', 'Designed and delivered Python programming training for 270+ students.'],
+  ['Operational Accuracy', 'Processed and validated 10,000+ records weekly with 95%+ accuracy.'],
+  ['Research Output', 'Completed deep learning research focused on mango leaf disease detection.'],
+];
+
 const certificates = [
-  ['Machine Learning Specialization', 'Stanford Online & DeepLearning.AI', '2026'],
-  ['Google Data Analytics Professional Certificate', 'Google Career Certificates', '2026'],
-  ['Microsoft Certified: Power BI Data Analyst Associate', 'Microsoft', '2025'],
+  {
+    name: 'Machine Learning Specialization',
+    org: 'Stanford Online & DeepLearning.AI',
+    year: '2026',
+    verificationUrl: profile.linkedin,
+  },
+  {
+    name: 'Google Data Analytics Professional Certificate',
+    org: 'Google Career Certificates',
+    year: '2026',
+    verificationUrl: profile.linkedin,
+  },
+  {
+    name: 'Microsoft Certified: Power BI Data Analyst Associate',
+    org: 'Microsoft',
+    year: '2025',
+    verificationUrl: profile.linkedin,
+  },
 ];
 
 const sectionVariants = {
@@ -360,11 +404,11 @@ function Navbar() {
 
   return (
     <header className="fixed left-0 right-0 top-4 z-50 px-4 md:top-6">
-      <div className="relative mx-auto flex min-h-[58px] max-w-5xl items-center justify-between rounded-2xl border border-white/10 bg-slate-950/88 px-4 shadow-2xl shadow-black/20 backdrop-blur-xl md:rounded-full md:px-7">
+      <div className="relative mx-auto flex min-h-[58px] max-w-6xl items-center justify-between rounded-2xl border border-white/10 bg-slate-950/88 px-4 shadow-2xl shadow-black/20 backdrop-blur-xl md:rounded-full md:px-6">
         <a href="#home" className="text-sm font-black tracking-wide text-white lg:hidden">
           Fahim
         </a>
-        <nav className="hidden flex-1 justify-center gap-7 text-sm font-bold text-slate-400 md:flex lg:gap-9 lg:text-[0.96rem]">
+        <nav className="hidden flex-1 justify-center gap-4 text-xs font-bold text-slate-400 md:flex lg:gap-6 lg:text-sm">
           {navItems.map((item) => (
             <a key={item} href={`#${item.toLowerCase()}`} className="transition hover:text-white">
               {item}
@@ -661,18 +705,64 @@ function Projects() {
   );
 }
 
+function Research() {
+  return (
+    <Section id="research" eyebrow="Publications" title="Research Work">
+      <div className="grid gap-6 lg:grid-cols-2">
+        {researchPapers.map((paper) => (
+          <div key={paper.title} className="premium-card flex flex-col p-7">
+            <div className="flex items-center gap-3 text-cyan-300">
+              <FileText size={22} />
+              <span className="text-xs font-black uppercase tracking-[0.22em]">{paper.type}</span>
+            </div>
+            <h3 className="mt-5 text-2xl font-black text-white">{paper.title}</h3>
+            <p className="mt-3 flex-1 text-slate-300">{paper.focus}</p>
+            <div className="mt-5 grid gap-3">
+              {paper.highlights.map((highlight) => (
+                <div key={highlight} className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/[0.03] px-4 py-3 text-sm font-bold text-slate-200">
+                  <BookOpen className="shrink-0 text-cyan-300" size={17} />
+                  <span>{highlight}</span>
+                </div>
+              ))}
+            </div>
+            <a href={paper.link} target="_blank" rel="noreferrer" className="mt-6 inline-flex w-fit items-center gap-2 rounded-full border border-cyan-400/25 px-4 py-2 font-bold text-cyan-200 transition hover:bg-cyan-400/10">
+              {paper.linkLabel} <ExternalLink size={16} />
+            </a>
+          </div>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+function Achievements() {
+  return (
+    <Section id="achievements" eyebrow="Milestones" title="Achievements">
+      <div className="grid gap-5 md:grid-cols-2">
+        {achievements.map(([title, description]) => (
+          <div key={title} className="premium-card p-6">
+            <Trophy className="text-cyan-300" size={26} />
+            <h3 className="mt-5 text-xl font-black text-white">{title}</h3>
+            <p className="mt-3 text-slate-300">{description}</p>
+          </div>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
 function Certificates() {
   return (
     <Section id="certificates" eyebrow="Credentials" title="Certificates">
       <div className="grid gap-5 md:grid-cols-3">
-        {certificates.map(([name, org, year]) => (
-          <div key={name} className="premium-card p-6">
+        {certificates.map((certificate) => (
+          <div key={certificate.name} className="premium-card p-6">
             <Award className="text-cyan-300" size={28} />
-            <h3 className="mt-5 text-xl font-black text-white">{name}</h3>
-            <p className="mt-3 text-slate-300">{org}</p>
-            <p className="mt-2 text-sm font-bold uppercase tracking-wider text-slate-500">{year}</p>
-            <a href={`mailto:${profile.email}?subject=Certificate verification: ${name}`} className="mt-5 inline-flex items-center gap-2 text-sm font-black text-cyan-200">
-              Request verification <ArrowUpRight size={15} />
+            <h3 className="mt-5 text-xl font-black text-white">{certificate.name}</h3>
+            <p className="mt-3 text-slate-300">{certificate.org}</p>
+            <p className="mt-2 text-sm font-bold uppercase tracking-wider text-slate-500">{certificate.year}</p>
+            <a href={certificate.verificationUrl} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm font-black text-cyan-200">
+              Verify credential <ExternalLink size={15} />
             </a>
           </div>
         ))}
@@ -699,7 +789,7 @@ function Contact() {
             [Phone, 'Phone', profile.phone],
             [MapPin, 'Location', profile.location],
             [Linkedin, 'LinkedIn', 'linkedin.com/in/fahimhqmim'],
-            [Github, 'GitHub', 'github.com/Meraz210'],
+            [Github, 'GitHub', 'github.com/Fahim-Haque'],
           ].map(([Icon, label, value]) => (
             <div key={label} className="premium-card flex items-center gap-4 p-5">
               <div className="grid h-11 w-11 place-items-center rounded-lg bg-cyan-400/10 text-cyan-200">
@@ -756,6 +846,8 @@ export default function App() {
         <Tools />
         <Experience />
         <Projects />
+        <Research />
+        <Achievements />
         <Certificates />
         <Contact />
       </main>
