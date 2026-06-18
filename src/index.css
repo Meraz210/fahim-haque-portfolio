@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  background: #050816;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -20;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(124, 58, 237, 0.2), transparent 26%),
+    radial-gradient(circle at 82% 12%, rgba(6, 182, 212, 0.14), transparent 28%),
+    linear-gradient(135deg, #050816 0%, #090d1f 48%, #050816 100%);
+}
+
+.theme-day body {
+  background: #f6f8fb;
+}
+
+.theme-day body::before {
+  background:
+    radial-gradient(circle at 18% 8%, rgba(79, 70, 229, 0.16), transparent 26%),
+    radial-gradient(circle at 82% 12%, rgba(14, 165, 233, 0.14), transparent 28%),
+    linear-gradient(135deg, #f8fbff 0%, #eef4fb 48%, #ffffff 100%);
+}
+
+.theme-day .bg-ink {
+  background-color: #f6f8fb;
+}
+
+.theme-day .text-slate-100,
+.theme-day .text-white {
+  color: #101827;
+}
+
+.theme-day .text-slate-200,
+.theme-day .text-slate-300,
+.theme-day .text-slate-400 {
+  color: #475569;
+}
+
+.theme-day .text-slate-500,
+.theme-day .skill-pill b {
+  color: #64748b;
+}
+
+.theme-day .bg-slate-950\/88,
+.theme-day .bg-slate-950\/95,
+.theme-day .bg-slate-950\/78,
+.theme-day .bg-slate-950\/70,
+.theme-day .bg-slate-950\/55,
+.theme-day .bg-slate-950\/45 {
+  background-color: rgba(255, 255, 255, 0.82);
+}
+
+.theme-day .border-white\/10 {
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
+.theme-day .shadow-black\/20,
+.theme-day .shadow-black\/30 {
+  --tw-shadow-color: rgba(15, 23, 42, 0.1);
+}
+
+.theme-day .from-ink\/20,
+.theme-day .via-ink\/25,
+.theme-day .to-ink {
+  --tw-gradient-from: rgba(246, 248, 251, 0.3) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(246, 248, 251, 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), rgba(246, 248, 251, 0.38) var(--tw-gradient-via-position), #f6f8fb var(--tw-gradient-to-position);
+}
+
+@layer components {
+  .section-shell {
+    @apply py-20 md:py-28;
+  }
+
+  .section-eyebrow {
+    @apply mb-3 text-xs font-black uppercase tracking-[0.25em] text-cyan-300;
+  }
+
+  .section-title {
+    @apply text-3xl font-black tracking-tight text-white md:text-5xl;
+  }
+
+  .premium-card {
+    @apply rounded-lg border border-white/10 bg-slate-950/55 shadow-2xl shadow-black/20 backdrop-blur-xl;
+  }
+
+  .primary-btn {
+    @apply inline-flex min-h-12 items-center gap-2 rounded-full bg-gradient-to-r from-violet-500 to-cyan-500 px-6 py-3 text-xs font-black uppercase tracking-[0.14em] text-white shadow-glow transition hover:-translate-y-0.5 hover:from-violet-600 hover:to-cyan-600 md:min-h-14 md:px-8 md:py-4 md:text-sm;
+  }
+
+  .secondary-btn {
+    @apply inline-flex min-h-12 items-center gap-2 rounded-full border border-white/10 bg-slate-950/45 px-5 py-3 text-xs font-black uppercase tracking-[0.12em] text-slate-200 transition hover:-translate-y-0.5 hover:border-cyan-400/35 hover:bg-cyan-400/10 hover:text-white md:min-h-14 md:px-6 md:py-4 md:text-sm;
+  }
+
+  .skill-pill {
+    @apply inline-flex min-h-10 items-center gap-3 whitespace-nowrap rounded-full border border-white/10 bg-slate-950/55 px-5 text-sm font-extrabold text-white md:min-h-12 md:px-6 md:text-base;
+  }
+
+  .skill-pill i {
+    @apply h-2.5 w-2.5 rounded-full shadow-lg;
+  }
+
+  .skill-pill b {
+    @apply font-bold text-slate-500;
+  }
+
+  .code-snippet {
+    @apply absolute rounded-lg border border-white/10 bg-slate-950/70 px-4 py-3 font-mono text-xs font-bold leading-6 text-cyan-950/0 text-slate-400 shadow-2xl shadow-black/30 backdrop-blur-xl;
+  }
+
+  .field {
+    @apply w-full rounded-lg border border-white/10 bg-slate-950/55 px-4 py-4 font-medium text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-400/50 focus:ring-4 focus:ring-cyan-400/10;
+  }
+
+  .theme-toggle-btn {
+    @apply grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/10 bg-slate-950/45 text-slate-200 transition hover:border-cyan-400/35 hover:bg-cyan-400/10 hover:text-white;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-shell {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .skill-pill {
+    min-height: 2.35rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .skill-pill i {
+    width: 0.45rem;
+    height: 0.45rem;
+  }
+
+  .premium-card {
+    border-radius: 0.75rem;
+  }
+}
