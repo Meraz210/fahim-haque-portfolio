@@ -341,7 +341,7 @@ function HologramScene() {
   }, []);
 
   return (
-    <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[58vh] min-h-[460px] overflow-hidden opacity-55">
+    <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[58vh] min-h-[460px] overflow-hidden opacity-55">
       <canvas ref={canvasRef} className="h-full w-full" aria-hidden="true" />
       <div className="absolute inset-0 bg-gradient-to-b from-ink/20 via-ink/25 to-ink" />
     </div>
@@ -429,7 +429,7 @@ function SkillRail({ items, reverse = false }) {
 
 function Hero() {
   return (
-    <section id="home" className="relative flex min-h-screen items-center overflow-hidden pt-24 md:pt-32">
+    <section id="home" className="relative isolate flex min-h-screen items-center overflow-hidden pt-24 md:pt-32">
       <HologramScene />
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-8 text-center sm:px-5 md:py-12">
         <motion.div
@@ -438,12 +438,12 @@ function Hero() {
           transition={{ duration: 0.75 }}
           className="mx-auto flex max-w-4xl flex-col items-center"
         >
-          <div className="relative">
+          <div className="relative z-20">
             <div className="rounded-full bg-[conic-gradient(from_180deg,#22d3ee,#7c3aed,#ec4899,#22d3ee)] p-2 shadow-[0_0_90px_rgba(124,58,237,0.32)]">
               <img
                 src="/assets/profile.jpg"
                 alt="Fahim Haque"
-                className="h-32 w-32 rounded-full border border-white/15 object-cover sm:h-44 sm:w-44 md:h-48 md:w-48"
+                className="relative z-10 h-32 w-32 rounded-full border border-white/15 bg-slate-950 object-cover sm:h-44 sm:w-44 md:h-48 md:w-48"
               />
             </div>
           </div>
